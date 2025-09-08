@@ -9,7 +9,7 @@ interface BlogPageProps {
 }
 
 export default async function BlogPage({ params }: BlogPageProps) {
-  const { slug } = await params;
+  const { slug } = params;
 
   const supabase = supabaseServer;
 
@@ -50,7 +50,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
             </p>
           )}
           {post.date && <p className="uppercase text-gray-500 text-sm mb-4">{formattedDate}</p>}
-          {post.image ? <img className="h-100" src={post.image}></img> : null}
+          {post.image ? <img className="h-100" src={post.image} alt={post.title}></img> : null}
         </div>
 
         <div className="prose max-w-none roboto-condensed-thin">
