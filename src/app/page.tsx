@@ -31,9 +31,9 @@ const hubSections = [
     bg: 'bg-black',
   },
   {
-    title: 'Guides',
-    description: 'Explore our free and premium guidebooks.',
-    href: '/guides',
+    title: 'Store',
+    description: 'Exercise and Nutrition Programs Engineered for Success',
+    href: '/store',
     bg: 'bg-black',
   },
   {

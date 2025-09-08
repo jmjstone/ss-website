@@ -124,7 +124,11 @@ export default function Header() {
             <Link href="/studies" className="px-4 py-4 hover:bg-white hover:text-black transition">
               STUDIES
             </Link>
-            <Link href="/videos" className="px-4 py-4 hover:bg-white hover:text-black transition">
+            {/* Hide VIDEOS second (at lg breakpoint and below) */}
+            <Link
+              href="/videos"
+              className="hidden lg:block px-4 py-4 hover:bg-white hover:text-black transition"
+            >
               VIDEOS
             </Link>
             <Link
@@ -133,7 +137,11 @@ export default function Header() {
             >
               CALCULATORS
             </Link>
-            <Link href="/guides" className="px-4 py-4 hover:bg-white hover:text-black transition">
+            {/* Hide GUIDES first (at xl breakpoint and below) */}
+            <Link
+              href="/guides"
+              className="hidden xl:block px-4 py-4 hover:bg-white hover:text-black transition"
+            >
               GUIDES
             </Link>
             <Link href="/coaching" className="px-4 py-4 hover:bg-white hover:text-black transition">

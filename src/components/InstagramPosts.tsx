@@ -6,11 +6,11 @@ import Link from 'next/link';
 const images = [
   '/InstagramShowcaseImage1.png',
   '/SSFGold.png',
-  '/InstagramShowcaseImage2.png',
+  'https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/preview_images/LiftersBlueprintPreview.png',
   '/instagramShowcaseImage3.png',
   '/SSFSlate.png',
-  '/instagramShowcaseImage3.png',
-  '/instagramShowcaseImage3.png',
+  'https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/product-images/8WeekSemesterShredsImage1.jpg',
+  'https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/product-images/8WeekSemesterShredsProgramCover.jpg',
 ];
 
 export default function InstagramGallery() {
