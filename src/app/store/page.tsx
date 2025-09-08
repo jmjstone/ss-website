@@ -47,12 +47,7 @@ export default function StorePage() {
     fetchProducts();
   }, []);
 
-  return <ComingSoon />;
-}
-{
-  /*
   return (
-    
     <main
       className="roboto-condensed-thin min-h-screen text-white p-8 bg-cover relative"
       style={{
@@ -60,7 +55,6 @@ export default function StorePage() {
           "url('https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/hero-background-images/GymImage7v2.jpg')",
       }}
     >
-      
       <div className="absolute inset-0 bg-black/60"></div>
 
       <div className=" relative max-w-7xl mx-auto">
@@ -85,7 +79,6 @@ export default function StorePage() {
         </div>
       </div>
 
-      
       <style jsx>{`
         @keyframes fadeIn {
           from {
@@ -103,8 +96,12 @@ export default function StorePage() {
         }
       `}</style>
     </main>
-    
   );
 }
-*/
+
+{
+  /*
+  return <ComingSoon />;
+}
+{*/
 }

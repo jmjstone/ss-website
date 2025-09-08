@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useSearchParams } from 'next/navigation';
@@ -75,7 +75,8 @@ function CheckoutForm({ clientSecret }: { clientSecret: string }) {
   );
 }
 
-export default function CheckoutPage() {
+// Separate component that uses useSearchParams
+function CheckoutContent() {
   const searchParams = useSearchParams();
   const initialClientSecret = searchParams.get('clientSecret');
   const { cart, getTotal } = useCart();
@@ -232,5 +233,18 @@ export default function CheckoutPage() {
         </div>
       </div>
     </Elements>
+  );
+}
+
+// Main component with Suspense boundary
+export default function CheckoutPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex justify-center items-center min-h-screen">Loading checkout...</div>
+      }
+    >
+      <CheckoutContent />
+    </Suspense>
   );
 }
