@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
-import { signPromo } from '@/lib/promo';
 
 interface OrderItem {
   id: string;
@@ -31,17 +30,18 @@ interface Product {
   image_url?: string | null;
 }
 
-export default function SuccessPage() {
+// Separate component that uses useSearchParams
+function SuccessContent() {
   const searchParams = useSearchParams();
   const paymentIntentId = searchParams.get('payment_intent');
   const supabase = createClientComponentClient();
-  const router = useRouter(); // <-- add this
-  const { cart, addToCart } = useCart(); // <-- extract addToCart
+  const router = useRouter();
+  const { cart, addToCart } = useCart();
   const { clearCart } = useCart();
 
   const [order, setOrder] = useState<Order | null>(null);
   const [recommended, setRecommended] = useState<Product[]>([]);
-  const [promoTokens, setPromoTokens] = useState<Record<string, string>>({}); // pid -> token
+  const [promoTokens, setPromoTokens] = useState<Record<string, string>>({});
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -85,11 +85,11 @@ export default function SuccessPage() {
 
     const fetchRecommended = async () => {
       try {
-        const purchasedIds = order.items.map((i) => i.id); // just UUID strings, NO quotes
+        const purchasedIds = order.items.map((i) => i.id);
         const { data, error } = await supabase
           .from('products')
           .select('*')
-          .not('id', 'in', `(${purchasedIds.join(',')})`) // ✅ no quotes around each UUID
+          .not('id', 'in', `(${purchasedIds.join(',')})`)
           .limit(3);
 
         if (error) {
@@ -140,7 +140,7 @@ export default function SuccessPage() {
       }
     };
     go();
-  }, [order, recommended]); // safe: runs only when these stabilize
+  }, [order, recommended]);
 
   // Clear cart once after order is fetched
   useEffect(() => {
@@ -218,13 +218,13 @@ export default function SuccessPage() {
         <p className="text-sm text-gray-500">
           Placed on {new Date(order.created_at).toLocaleString()}
         </p>
-        {/* Recommended Products */}{' '}
+        {/* Recommended Products */}
         {recommended.length > 0 && (
           <div className="mt-10">
             <h2 className="text-lg font-semibold mb-4">You might also like:</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {recommended?.map((product) => {
-                const token = promoTokens[product.id]; // token fetched from /api/promo/mint
+                const token = promoTokens[product.id];
                 const promoHref = token
                   ? `/store/${product.id}?promo=${encodeURIComponent(token)}`
                   : `/store/${product.id}`;
@@ -249,14 +249,14 @@ export default function SuccessPage() {
 
                     {/* Buy Now button */}
                     <button
-                      disabled={!token} // disable until token is ready
+                      disabled={!token}
                       className="mt-2 bg-green-600 disabled:opacity-50 text-white px-3 py-1 rounded hover:bg-green-700 transition"
                       onClick={() =>
                         addToCart({
                           id: product.id,
                           name: product.name,
                           price: product.price,
-                          promoToken: token, // attach server-minted token
+                          promoToken: token,
                         })
                       }
                     >
@@ -279,5 +279,20 @@ export default function SuccessPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// Main component with Suspense boundary
+export default function SuccessPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex h-full uppercase justify-center m-auto">
+          <p className="roboto-condensed-logo p-6">Loading success page...</p>
+        </div>
+      }
+    >
+      <SuccessContent />
+    </Suspense>
   );
 }
