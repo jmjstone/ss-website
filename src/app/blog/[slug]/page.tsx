@@ -15,11 +15,10 @@ interface BlogPost {
   date?: string;
 }
 
-export default async function BlogPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; // Add await here
 
   const supabase = supabaseServer;
-
   const { data: post, error } = await supabase
     .from('blog_posts')
     .select('*')
