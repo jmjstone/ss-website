@@ -1,0 +1,131 @@
+Perfect, Jayden! Let’s break this down methodically. I’ll create a roadmap for the website and then we can start tackling it step by step. I’ll keep it high-level first and then we can dive into each section with concrete implementation plans.
+ 
+Website Roadmap
+
+1. Home Landing Page (Dark Theme)
+    •	Purpose: Brand presence + overview of your offerings.
+    •	Sections:
+        1.	Hero section with value proposition and CTA (e.g., “Learn Free Fitness Science” / “Explore Guides”).
+                Implementation Plan (Step-by-Step)
+                    1.	Build the static skeleton first
+                    •	Hero section
+                    •	HubCard sections
+                    •	Header with navigation links
+                    2.	Add interactivity
+                    •	Carousel / slideshow for hero
+                    •	Smooth hover effects for hub cards
+                    3.	Dynamic content integration
+                    •	Pull latest articles from Supabase
+                    •	Pull featured videos from YouTube embed API
+                    •	Calculators link to their dedicated pages
+                    4.	Styling
+                    •	Dark theme for hero, light for hub sections
+                    •	Consistent spacing and typography
+                    5.	Optional
+                    •	Add scroll-triggered animations (fade-in / slide-up)
+                    •	Lazy-load media for performance
+
+        2.	Quick navigation to free content (Articles, Calculators, Videos).
+        3.	Teaser for non-free content (Guides, Meal Plans, etc.).
+        4.	Testimonials / social proof (optional).
+        5.	Contact / Coaching CTA.
+            •	Features:
+                o	Dark background
+                o	Quick links / featured content snippets
+                o	Responsive design
+            •	Tasks:
+                o	Create HomePage.tsx in src/app/page.tsx.
+                o	Define Hero section + layout.
+                o	Placeholder components for Articles, Videos, Calculators, Guides.
+ 
+2. Free Fitness Articles
+    •	Categories: Hypertrophy, Nutrition, Strength, Health
+    •	Implementation:
+        o	Articles stored in blog_posts (already set up)
+        o	Add category field to blog_posts table: enum 'hypertrophy' | 'nutrition' | 'strength' | 'health'
+        o	Listing pages:
+            	/articles – shows all free articles
+            	/articles/[category] – filtered by category
+        o	Individual article page: /articles/[slug] (reuse your current blog/[slug] logic)
+    •	Tasks:
+        o	Add category to blog_posts table
+        o	Update admin/new post page to select category
+        o	Update listing page to filter by category
+        o	Add UI for article cards grouped by category
+ 
+3. Scientific Study References
+    •	Purpose: Provide study breakdowns with PMIDs and summaries
+    •	Implementation:
+        o	New table: studies
+            	Fields: id, title, summary, url, date, category
+        o	Listing page: /studies + /studies/[category]
+        o	Individual study page: /studies/[slug]
+    •	Tasks:
+        o	Create admin interface for adding studies
+        o	Reuse BlogCard-like UI for study cards
+        o	Optionally, show full text or abstract via ReactMarkdown
+ 
+4. Free Content Videos
+    •	Implementation:
+        o	Store YouTube links in a videos table:
+            	Fields: id, title, url, thumbnail, category
+        o	Listing page: /videos
+        o	Embedded video player modal or direct page view
+    •	Tasks:
+        o	Admin page to add new video links
+        o	Component for video cards
+        o	Option to watch in modal vs. redirected page
+    
+5. Free Fitness Calculators
+    •	Calculators planned:
+        o	BMR
+        o	TDEE
+        o	Macro Nutrient Calculator
+        o	Advanced: Weekly hypertrophy stimulus
+    •	Implementation:
+        o	Create a /calculators page with a dashboard of all calculators
+        o	Each calculator is a separate component
+        o	Inputs → calculation → output dynamically displayed
+    •	Tasks:
+        o	Create layout for /calculators
+        o	Build each calculator component
+        o	Style calculators for usability and clarity
+ 
+6. Non-Free Fitness Content
+    •	Implementation:
+        o	Paid guides, meal plans, and lifting plans
+        o	Can integrate a payment provider (Stripe) later
+        o	Access restricted via is_paid_user or similar in user profile
+    •	Tasks:
+        o	Create /guides page with card list
+        o	Add ProtectedRoute + payment logic later
+        o	Build simple checkout / content access system
+ 
+7. Contact for Coaching
+    •	Implementation:
+        o	Form with inputs: Name, Email, Goals, Experience, etc.
+        o	Admin view: View submissions
+        o	Optional: Email notification to you
+    •	Tasks:
+        o	/contact page
+        o	Form submission API route
+        o	Admin dashboard to view submissions
+ 
+Next Steps (Immediate)
+
+Let’s tackle this step by step. Here’s a recommended first milestone:
+1.	Home Landing Page
+    o	Dark theme
+    o	Overview sections linking to Articles, Videos, Calculators, Guides
+    o	Hero section with CTA
+2.	Free Articles
+    o	Add category field
+    o	Admin interface to select category
+    o	Listing page with category filter
+
+Once the articles system is fully functional, we can move on to studies, videos, calculators, and then the paid content / coaching sections.
+ 
+If you want, we can start by scaffolding the home landing page with the hero + overview sections. This will give the site structure, navigation, and dark theme foundation before adding all the content sections.
+
+Do you want to start there?
+

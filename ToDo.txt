@@ -1,0 +1,15 @@
+Okay, lets start really building this website out. My overall plan is for this to be a hub for a few things: 
+
+1. A source of free fitness information. This will take the form of articles centered around four main areas: Hypertrophy, Nutrition, Strength, and Health. 
+
+2. A source of references to key scientific studies with breakdowns. This is similar to the articles section but focused more on publications of others, PMID articles, ect. 
+
+3. A link to free content, videos that will be posted on a seperate fitness channel hosted on youtube. Users should be able to click on these videos and, if they want to, watch them directly on the website. 
+
+6. Free Fitness Calculators. These will be, for example, BMR, TDEE, MacroNutrient Calculator, and further down the line I will aim to implement more complex calculators like weekly hypertrophy stimulus, ect. 
+
+4. Non-Free fitness content. I want all this free content to provide value that leads the user towards what I will be selling, Meal Plans, Lifting Plans, Hypertrophy and Nutrition Guidebooks.
+
+5. Area to contact for coaching. I seperate this from the non-free fitness content as this is more peronalized, and will require more user form completion than direct online purchases. 
+
+For reference, I quite like the website for Renaissance Periodization, in particular the distribution of free learning content, with the backdrop of purchases, ect. I would like my home landing page to be dark based, with other content like blogs having white backgrounds for readability, but we can tackle the look of the pages later. Lets get a general roadmap going and start tackling these step by step. 
