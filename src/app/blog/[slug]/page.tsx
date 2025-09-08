@@ -4,11 +4,8 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import Link from 'next/link';
 import BackButton from '@/components/BackButton';
-interface BlogPageProps {
-  params: { slug: string };
-}
 
-export default async function BlogPage({ params }: BlogPageProps) {
+export default async function BlogPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
   const supabase = supabaseServer;
