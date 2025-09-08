@@ -33,6 +33,9 @@ export default function MacroCalculator() {
   };
 
   const calculateFromWeight = () => {
+    // Check if weight is a valid number before proceeding
+    if (weight === '' || weight <= 0) return;
+
     const kg = convertToKg(weight, weightUnit);
     if (!kg) return;
 
