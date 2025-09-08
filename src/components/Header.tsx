@@ -106,7 +106,11 @@ export default function Header() {
         </h1>
 */}
         <Link href="/" className="flex max-h-14 pr-1 pl-2 items-center hover:scale-102 transition">
-          <img className="max-w-16 min-w-16" src="/sslogowhite.png" alt="Stone Science Logo"></img>
+          <img
+            className="max-w-16 min-w-16"
+            src="https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/assets/SSLogoWhite.png"
+            alt="Stone Science Logo"
+          ></img>
           <p className="roboto-condensed-logo pl-1 stoneslate mt-[4px] text-[64px] uppercase italic">
             FIT.
           </p>
