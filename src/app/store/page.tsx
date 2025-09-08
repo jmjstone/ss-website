@@ -47,6 +47,8 @@ export default function StorePage() {
     fetchProducts();
   }, []);
 
+  return <ComingSoon />;
+  /*
   return (
     <main
       className="roboto-condensed-thin min-h-screen text-white p-8 bg-cover relative"
@@ -98,10 +100,5 @@ export default function StorePage() {
     </main>
   );
 }
-
-{
-  /*
-  return <ComingSoon />;
-}
-{*/
+*/
 }
