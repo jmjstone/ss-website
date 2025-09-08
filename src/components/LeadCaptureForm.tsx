@@ -84,12 +84,16 @@ export default function LeadCaptureForm() {
                 Get It
               </button>
             </form>
-            {status === 'loading' && <p className="mt-2 uppercase">Submitting...</p>}
+            {status === 'loading' && (
+              <p className="mt-2 roboto-condensed-logo text-xl uppercase">Submitting...</p>
+            )}
             {status === 'success' && (
-              <p className="mt-2 text-sky-400 uppercase bold">Check your inbox!</p>
+              <p className="mt-2 roboto-condensed-logo text-xl text-blue-300 uppercase bold">
+                Check your inbox!
+              </p>
             )}
             {status && status !== 'success' && status !== 'loading' && (
-              <p className="mt-2 text-red-400 uppercase">{status}</p>
+              <p className="mt-2 text-red-400 roboto-condensed-logo uppercase">{status}</p>
             )}
           </div>
         </div>

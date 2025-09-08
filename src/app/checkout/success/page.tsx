@@ -90,6 +90,7 @@ function SuccessContent() {
           .from('products')
           .select('*')
           .not('id', 'in', `(${purchasedIds.join(',')})`)
+          .eq('active', true) // Add this line to filter for active products only
           .limit(3);
 
         if (error) {
@@ -183,7 +184,7 @@ function SuccessContent() {
         </div>
         <h1 className="text-2xl font-bold text-sky-600 mb-4">Thank you for your purchase!</h1>
         <p className="text-gray-700 mb-6">
-          A receipt and order details has been sent to <strong>{order.email}</strong>.
+          Your receipt and order details have been sent to <strong>{order.email}</strong>.
         </p>
         {/* Order Summary */}
         <h2 className="text-lg font-semibold mb-2">Order Summary</h2>

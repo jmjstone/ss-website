@@ -5,7 +5,7 @@ import { useParams, useSearchParams } from 'next/navigation';
 import { supabase } from '@/lib/supabaseClient';
 import { useCart } from '@/context/CartContext';
 import BackButton from '@/components/BackButton';
-
+import ReactMarkdown from 'react-markdown';
 interface Product {
   id: string;
   name: string;
@@ -200,7 +200,7 @@ export default function ProductPage() {
           </p>
           {product.description && <p className="text-stone-300 mb-4">{product.description}</p>}
           <button
-            className="bg- mt-2 w-60 border-1 border-dashed border-white hover:border-0 hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] rounded-full hover:bg-white hover:text-black px-6 py-3 uppercase roboto-condensed-logo text-xl transition animate-pulseHover"
+            className="bg- mt-2 w-60 border-1 border-white hover:border-0 hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] rounded-full hover:bg-white hover:text-black px-6 py-3 uppercase roboto-condensed-logo text-xl transition animate-pulseHover"
             onClick={() =>
               addToCart({
                 id: product.id,
@@ -215,7 +215,9 @@ export default function ProductPage() {
             Add to Cart
           </button>
           {product.long_description && (
-            <p className="text-stone-300 mb-4">{product.long_description}</p>
+            <div className="mt-6 prose prose-invert max-w-none">
+              <ReactMarkdown>{product.long_description}</ReactMarkdown>
+            </div>
           )}
         </div>
       </div>
