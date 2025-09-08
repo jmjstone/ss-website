@@ -61,7 +61,7 @@ export default function LeadCaptureForm() {
                 <p>Copy of:</p>
               </div>
               <p className="text-[40px] roboto-condensed-logo italic">
-                The College Lifter's Blueprint
+                The College Lifter&apos;s Blueprint
               </p>
             </h2>
 
