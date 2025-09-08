@@ -4,11 +4,6 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import Link from 'next/link';
 
-// Define the shape of the route params
-interface BlogPageParams {
-  slug: string;
-}
-
 // Define the shape of the post from Supabase
 interface BlogPost {
   id: number;
@@ -19,11 +14,8 @@ interface BlogPost {
   image?: string;
   date?: string;
 }
-interface BlogPageProps {
-  params: BlogPageParams;
-}
 
-export default async function BlogPage({ params }: BlogPageProps) {
+export default async function BlogPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
   const supabase = supabaseServer;
@@ -32,7 +24,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
     .from('blog_posts')
     .select('*')
     .eq('slug', slug)
-    .single<BlogPost>(); // ← Type is here
+    .single<BlogPost>();
 
   if (error || !post) {
     console.error(error);
