@@ -37,7 +37,7 @@ export default function CartPopdown() {
     }
   };
   return (
-    <div className="fixed top-20 right-6 z-50 w-96 uppercase roboto-condensed-thin bg-neutral-900/95 backdrop-blur-xl text-white border border-white/10 rounded-2xl shadow-2xl animate-slideDown">
+    <div className="fixed top-20 right-1 sm:right-6 md:right-6 lg:right-6 xl:right-6 z-50 w-96 uppercase roboto-condensed-thin bg-neutral-900/95 backdrop-blur-xl text-white border border-white/10 rounded-2xl shadow-2xl animate-slideDown">
       <div className="p-6 space-y-4">
         <div>
           <h2 className="text-xl font-semibold mb-1">Item Added</h2>

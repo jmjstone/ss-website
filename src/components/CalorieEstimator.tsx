@@ -98,7 +98,7 @@ export default function CalorieEstimator({
             value={weight}
             onChange={(e) => setWeight(Number(e.target.value))}
             placeholder="Enter weight"
-            className="flex-1 p-3 rounded-none bg-stone-700 text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
+            className="flex-1 p-3 w-10 sm:w-auto md:w-auto lg:w-auto xl:w-auto rounded-none bg-stone-700 text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
             required
           />
           <div className="flex gap-2">
@@ -130,7 +130,7 @@ export default function CalorieEstimator({
             value={height}
             onChange={(e) => setHeight(Number(e.target.value))}
             placeholder="Enter height"
-            className="flex-1 p-3 rounded-none bg-stone-700 text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
+            className="flex-1 p-3 w-10 sm:w-auto md:w-auto lg:w-auto xl:w-auto rounded-none bg-stone-700 text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
             required
           />
           <div className="flex gap-2">

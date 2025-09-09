@@ -64,7 +64,7 @@ export default function CartPage() {
         </h1>
         <div className="border-b p-2 border-gray-200 mb-6 pb-4 roboto-condensed-thin uppercase flex justify-between">
           <p>Product</p>
-          <div className="flex gap-49">
+          <div className="flex gap-14 sm:gap-49 md:gap-49 lg:gap-49 xl:gap-49">
             <p>Quantity</p>
             <p>Total</p>
           </div>
@@ -89,7 +89,7 @@ export default function CartPage() {
                   className="flex justify-between items-center p-2 bg-gray-50 border-gray-200"
                 >
                   {/* Left: Product image + info */}
-                  <div className="flex gap-2">
+                  <div className="flex gap-0 sm:gap-2 md:gap-2 lg:gap-2 xl:gap-2">
                     {item.image_url && (
                       <div className="w-20 h-30 flex-shrink-0 mr-4">
                         <img
@@ -108,7 +108,7 @@ export default function CartPage() {
                   </div>
 
                   {/* Right: Quantity + remove + total */}
-                  <div className="flex justify-between gap-20">
+                  <div className="flex justify-between gap-4 sm:gap-20 md:gap-20 lg:gap-20 xl:gap-20">
                     <div className="flex items-center border rounded overflow-hidden">
                       <button
                         className="px-2 py-1 bg-gray-200 hover:bg-gray-300 transition"

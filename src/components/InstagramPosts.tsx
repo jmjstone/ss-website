@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import Link from 'next/link';
 const images = [
-  '/InstagramShowcaseImage1.png',
-  '/SSFGold.png',
+  'https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/instagram-showcase/InstagramShowcaseImage1.png',
+  'https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/instagram-showcase/InstagramShowcaseImage2.png',
   'https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/preview_images/LiftersBlueprintPreview.png',
-  '/instagramShowcaseImage3.png',
+  'https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/instagram-showcase/InstagramShowCaseImage3.png',
   '/SSFSlate.png',
   'https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/product-images/8WeekSemesterShredsImage1.jpg',
   'https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/product-images/8WeekSemesterShredsProgramCover.jpg',

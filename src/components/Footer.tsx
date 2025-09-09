@@ -21,18 +21,12 @@ export default function Footer() {
 
         {/* Guides Section */}
         <div className="flex flex-col gap-3">
-          <h3 className="uppercase text-lg font-bold stoneslate">Guides</h3>
-          <Link href="/guides/nutrition" className="hover:stoneslate transition">
-            Nutrition
+          <h3 className="uppercase text-lg font-bold stoneslate">Products</h3>
+          <Link href="/store" className="hover:stoneslate transition">
+            Store
           </Link>
-          <Link href="/guides/hypertrophy" className="hover:stoneslate transition">
-            Hypertrophy
-          </Link>
-          <Link href="/guides/strength" className="hover:stoneslate transition">
-            Strength
-          </Link>
-          <Link href="/guides/health" className="hover:stoneslate transition">
-            Health
+          <Link href="/cart" className="hover:stoneslate transition">
+            Cart
           </Link>
         </div>
 

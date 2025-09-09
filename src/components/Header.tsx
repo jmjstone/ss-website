@@ -111,7 +111,7 @@ export default function Header() {
             src="https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/assets/SSLogoWhite.png"
             alt="Stone Science Logo"
           ></img>
-          <p className="roboto-condensed-logo pl-1 stoneslate mt-[4px] text-[64px] uppercase italic">
+          <p className="hidden md:flex roboto-condensed-logo pl-1 stoneslate mt-[4px] text-[64px] uppercase italic">
             FIT.
           </p>
         </Link>

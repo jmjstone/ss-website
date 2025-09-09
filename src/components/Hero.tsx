@@ -12,8 +12,8 @@ const slides = [
     img: 'https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/hero-background-images/GymImage7v2.jpg',
   },
   {
-    title: 'Guides',
-    href: '/guides',
+    title: 'Store',
+    href: '/store',
     bg: 'bg-stone-700',
     img: 'https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/hero-background-images/GymImage9v3.jpg',
   },
@@ -69,7 +69,7 @@ export default function Hero() {
               }}
               className="flex h-[40vh] items-center justify-center transition-colors duration-300"
             >
-              <h2 className="uppercase text-8xl font-bold roboto-condensed-thinx2 text-slate-300 text-shadow-black hover:text-white hover:scale-102 transition">
+              <h2 className="uppercase text-6xl sm:text-6xl md:text-8xl lg:text-8xl xl:text-8xl font-bold roboto-condensed-thinx2 text-slate-300 text-shadow-black hover:text-white hover:scale-102 transition">
                 {slide.title}
               </h2>
             </Link>
