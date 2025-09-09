@@ -60,65 +60,67 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-stone-900 rounded-none shadow-lg roboto-condensed-thin text-white">
-      <h1 className="text-3xl font-bold uppercase roboto-condensed-logo mb-6 text-white">
-        Sign Up
-      </h1>
+    <div className="bg-white pt-4 pb-14">
+      <div className="max-w-md mx-auto mt-10 p-6 shadow-lg border-1 border-gray-300 bg-stone-200 rounded-none shadow-lg roboto-condensed-thin text-white">
+        <h1 className="text-3xl font-bold uppercase roboto-condensed-logo mb-6 text-black">
+          Sign Up
+        </h1>
 
-      <div className="space-y-4">
-        {/* First & Last Name */}
-        <input
-          type="text"
-          placeholder="First Name"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          className="w-full p-3 bg-stone-700 rounded-none text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
-          required
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          className="w-full p-3 bg-stone-700 rounded-none text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
-          required
-        />
+        <div className="space-y-4">
+          {/* First & Last Name */}
+          <input
+            type="text"
+            placeholder="First Name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            className="w-full p-3 bg-stone-100 rounded-none text-black placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            className="w-full p-3 bg-stone-100 rounded-none text-black placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
+            required
+          />
 
-        {/* Email & Password */}
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-3 bg-stone-700 rounded-none text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-3 bg-stone-700 rounded-none text-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
-          required
-        />
+          {/* Email & Password */}
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full p-3 bg-stone-100 rounded-none text-black placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full p-3 bg-stone-100 rounded-none text-black placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-[#7fa9e4]"
+            required
+          />
+        </div>
+
+        {/* Submit */}
+        <button
+          onClick={handleSignup}
+          disabled={loading}
+          className="w-full mt-6 bg-slate-600 hover:border-1 hover:border-black hover:font-bold roboto-condensed-logo uppercase text-lg hover:bg-white hover:text-black px-6 py-3 rounded-none transition-colors duration-300"
+        >
+          {loading ? 'Signing Up...' : 'Sign Up'}
+        </button>
+
+        {/* Login link */}
+        <p className="mt-4 text-center text-stone-500">
+          Already have an account?{' '}
+          <a href="/login" className="underline hover:text-black">
+            Login
+          </a>
+        </p>
       </div>
-
-      {/* Submit */}
-      <button
-        onClick={handleSignup}
-        disabled={loading}
-        className="w-full mt-6 bg-slate-600 roboto-condensed-logo uppercase text-lg hover:bg-white hover:text-black px-6 py-3 rounded-none transition-colors duration-300"
-      >
-        {loading ? 'Signing Up...' : 'Sign Up'}
-      </button>
-
-      {/* Login link */}
-      <p className="mt-4 text-center text-stone-400">
-        Already have an account?{' '}
-        <a href="/login" className="underline hover:text-white">
-          Login
-        </a>
-      </p>
     </div>
   );
 }
