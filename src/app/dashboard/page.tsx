@@ -19,17 +19,13 @@ export default function DashboardPage() {
     <ProtectedRoute>
       <main className="min-h-screen p-6 bg-white text-black roboto-condensed-thin">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold uppercase roboto-condensed-logo mb-6">Dashboard</h1>
-
-          <div className="bg-stone-200 p-6 rounded-none ">
-            <p className="text-2xl mb-2 roboto-condensed-logo uppercase">
-              Welcome {userProfile?.first_name ?? 'User'}
-            </p>
-            <p className="text-md text-stone-600">
-              From here you can manage your account, access coaching content, or{' '}
-              {isAdmin ? 'perform administrative tasks.' : 'view your content.'}
-            </p>
-          </div>
+          <h1 className="text-3xl font-bold uppercase roboto-condensed-logo mb-2">
+            Welcome {userProfile?.first_name ?? 'User'}
+          </h1>
+          <p className="text-md uppercase text-stone-600">
+            Manage your account, access coaching content, and{' '}
+            {isAdmin ? 'perform administrative tasks.' : 'more.'}
+          </p>
 
           {/* User action cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
