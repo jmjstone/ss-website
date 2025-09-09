@@ -66,7 +66,11 @@ export default function StorePage() {
             Professional packages expertly designed to help you reach your goals.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
+        <div
+          className={`grid gap-10 relative z-10 ${
+            products.length == 1 ? 'grid-cols-1 justify-items-center' : 'grid-cols-1 md:grid-cols-3'
+          }`}
+        >
           {products.map((p, idx) => (
             <div
               key={p.id}
