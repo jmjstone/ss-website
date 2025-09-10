@@ -61,7 +61,7 @@ export default function SignupPage() {
 
   return (
     <div className="bg-white pt-4 pb-14">
-      <div className="max-w-md mx-auto mt-10 p-6 shadow-lg border-1 border-gray-300 bg-stone-200 rounded-none shadow-lg roboto-condensed-thin text-white">
+      <div className="max-w-md mx-auto mt-10 p-6 border-gray-300 bg-stone-200 rounded-none shadow-lg roboto-condensed-thin text-white">
         <h1 className="text-3xl font-bold uppercase roboto-condensed-logo mb-6 text-black">
           Sign Up
         </h1>
@@ -108,7 +108,7 @@ export default function SignupPage() {
         <button
           onClick={handleSignup}
           disabled={loading}
-          className="w-full mt-6 bg-slate-600 hover:border-1 hover:border-black hover:font-bold roboto-condensed-logo uppercase text-lg hover:bg-white hover:text-black px-6 py-3 rounded-none transition-colors duration-300"
+          className="w-full mt-6 bg-slate-600 border-1 border-slate-600 hover:border-1 hover:border-black hover:font-bold roboto-condensed-logo uppercase text-lg hover:bg-white hover:text-black px-6 py-3 rounded-none transition-colors duration-300"
         >
           {loading ? 'Signing Up...' : 'Sign Up'}
         </button>

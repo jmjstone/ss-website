@@ -29,7 +29,7 @@ export default function CalculatorsPage() {
             <Link
               key={calc.title}
               href={calc.link}
-              className="block bg-stone-200 hover:bg-stone-100 hover:scale-101 p-6 rounded-none transition"
+              className="block bg-stone-200 hover:bg-stone-100  border-stone-300 p-6 rounded-none transition"
             >
               <h2 className="text-2xl font-bold uppercase roboto-condensed-logo mb-2">
                 {calc.title}
