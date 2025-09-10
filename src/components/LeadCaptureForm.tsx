@@ -74,14 +74,14 @@ export default function LeadCaptureForm() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="Enter your email"
-                  className="flex-1 p-4 rounded-xl roboto-condensed-thin text-white border-1 border-white"
+                  className="flex-1 p-4 rounded-3xl roboto-condensed-thin text-white border-1 border-white"
                 />
                 <p className="roboto-condensed-thinx2 text-stone-300 italic">
                   *Email will be placed on Stone Science Fitness Email List
                 </p>
                 <button
                   type="submit"
-                  className="bg-[#7fa9e4] min-w-20 outline-0 text-shadow-2 text-shadow-black outline-slate-200 roboto-condensed-logo uppercase text-white px-auto py-2 rounded-2xl text-3xl shadow-[0_0_1px_#fff,inset_0_0_1px_#fff,0_0_5px_#08f,0_0_5px_#08f,0_0_10px_#08f] hover:bg-white hover:text-slate-500 transition hover:scale-102"
+                  className="bg-[#7fa9e4] min-w-20 outline-0 text-shadow-2 text-shadow-black outline-slate-200 roboto-condensed-logo uppercase text-white px-auto py-2 rounded-3xl text-3xl  shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f] hover:bg-white hover:text-slate-500 transition hover:scale-102"
                 >
                   Get It
                 </button>
