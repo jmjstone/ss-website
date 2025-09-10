@@ -107,15 +107,15 @@ export default function Header() {
 */}
         <Link href="/" className="flex max-h-14 pr-1 pl-2 items-center hover:scale-102 transition">
           <img
-            className="max-w-16 min-w-16"
+            className="max-w-12 min-w-12"
             src="https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/assets/SSLogoWhite.png"
             alt="Stone Science Logo"
           ></img>
-          <p className="hidden md:flex roboto-condensed-logo pl-1 stoneslate mt-[4px] text-[64px] uppercase italic">
+          <p className="hidden md:flex roboto-condensed-logo pl-1 stoneslate mt-[2px] text-[48px] uppercase italic">
             FIT.
           </p>
         </Link>
-        <nav className="flex items-center uppercase roboto-condensed-thin">
+        <nav className="flex items-center text-[15px] uppercase roboto-condensed-thin">
           {/* Desktop links (hidden on small screens) */}
           <div className="hidden md:flex">
             <Link href="/blog" className="px-4 py-4 hover:bg-white hover:text-black transition">

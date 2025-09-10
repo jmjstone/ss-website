@@ -97,7 +97,7 @@ export default function HeaderWhite() {
           >
             <div className="flex items-baseline gap-[2px] w-full">
               <img
-                className=" border-black max-h-[46px] mt-1 min-h-[46px]"
+                className=" border-black max-h-[36px] mt-1 min-h-[36px]"
                 src="https://yvrdqrvtohobvjuqprmy.supabase.co/storage/v1/object/public/assets/SSLogoBlack.png"
                 alt="Stone Science Logo"
               />
